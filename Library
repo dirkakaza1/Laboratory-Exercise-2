@@ -1,0 +1,18 @@
+package BookCollection;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Library {
+	private ArrayList<String> book;
+	private boolean empty = true;
+	
+	public Library() {
+		book = new ArrayList<String>();
+	}
+	
+	public void addBook(String books) {
+		book.add(books);
+		System.out.println("Book added: " + books);
+		empty = false;
+	}
