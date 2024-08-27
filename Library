@@ -16,3 +16,15 @@ public class Library {
 		System.out.println("Book added: " + books);
 		empty = false;
 	}
+
+public void removeBook(int index) {
+		if (index >= 0 && index < book.size() && book.isEmpty() != true) {
+			book.remove(index);
+			System.out.println("Removed book on index: " + index);
+		}
+		else {
+			System.out.println("Enter Valid Index");
+		}
+		 if (book.isEmpty()){
+			empty = true;
+			}
