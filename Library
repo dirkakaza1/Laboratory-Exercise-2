@@ -17,6 +17,16 @@ public class Library {
 		empty = false;
 	}
 
+public void insert(int index, String element) {
+    if (index >= 0 && index <= book.size()) {
+        book.add(index, element);
+        System.out.println("Inserted book: " + element + " at index: " + index);
+        empty = false;
+    } else {
+        System.out.println("Invalid index. Unable to insert book.");
+    }
+}
+
 public void removeBook(int index) {
 		if (index >= 0 && index < book.size() && book.isEmpty() != true) {
 			book.remove(index);
