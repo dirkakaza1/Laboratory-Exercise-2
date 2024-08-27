@@ -1,0 +1,9 @@
+public void remove(int index) {
+    if (index < 0 || index >= book.size()) {
+        System.out.println("Invalid index. No book removed.");
+    } else {
+        String removedBook = book.remove(index);
+        System.out.println("Book removed: " + removedBook);
+        empty = book.isEmpty();
+    }
+}
