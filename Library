@@ -48,13 +48,14 @@ public void getBook(int index) {
     }
 }
 
-    public void totalBooks() {
-        if (!bookList.isEmpty()) {
-            System.out.println("Total number of books: " + bookList.size());
-        } else {
-            System.out.println("Please add books before using this function");
-        }
+    public void getBook(int index) {
+    if (index < 0 || index >= books.size()) {
+        System.out.println("Error: Index " + index + " is out of bounds.");
+        return;
     }
+    String book = books.get(index);
+    System.out.println("Book at index " + index + ": \"" + book + "\"");
+}
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
