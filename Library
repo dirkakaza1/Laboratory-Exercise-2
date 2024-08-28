@@ -38,6 +38,7 @@ public void removeBook(int index) {
 		 if (book.isEmpty()){
 			empty = true;
 			}
+}
 
  public void getBook(int index) {
         if (index >= 0 && index < book.size()) {
