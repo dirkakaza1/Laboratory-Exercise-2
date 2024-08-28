@@ -38,3 +38,12 @@ public void removeBook(int index) {
 		 if (book.isEmpty()){
 			empty = true;
 			}
+        public String getBook(int index) {
+    try {
+        String book = books.get(index);
+        return "Book at index " + index + ": \"" + book + "\"";
+    } catch (IndexOutOfBoundsException e) {
+        return "Error: " + e.getMessage();
+    }
+}
+
