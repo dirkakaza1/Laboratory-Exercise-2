@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Library {
 	private ArrayList<String> book;
-	private boolean empty = true;
+	
 	
 	public Library() {
 		book = new ArrayList<String>();
@@ -14,14 +14,13 @@ public class Library {
 	public void addBook(String books) {
 		book.add(books);
 		System.out.println("Book added: " + books);
-		empty = false;
+		
 	}
 
 public void insert(int index, String element) {
     if (index >= 0 && index <= book.size()) {
         book.add(index, element);
         System.out.println("Inserted book: " + element + " at index: " + index);
-        empty = false;
     } else {
         System.out.println("Invalid index. Unable to insert book.");
     }
@@ -35,9 +34,6 @@ public void removeBook(int index) {
 		else {
 			System.out.println("Enter Valid Index");
 		}
-		 if (book.isEmpty()){
-			empty = true;
-			}
 }
 
  public void getBook(int index) {
