@@ -40,12 +40,12 @@ public void removeBook(int index) {
 			}
 
 public void getBook(int index) {
-    try {
-        String book = books.get(index);
-        System.out.println("Book at index " + index + ": \"" + book + "\"");
-    } catch (IndexOutOfBoundsException e) {
-        System.out.println("Error: " + e.getMessage());
+    if (index < 0 || index >= books.size()) {
+        System.out.println("Error: Index " + index + " is out of bounds.");
+        return;
     }
+    String book = books.get(index);
+    System.out.println("Book at index " + index + ": \"" + book + "\"");
 }
 
     public void totalBooks() {
