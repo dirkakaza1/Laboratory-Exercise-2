@@ -49,8 +49,8 @@ public void getBook(int index) {
 }
 
     public void totalBooks() {
-        if (!book.empty()) {
-            System.out.println("Total number of books: " + book.size());
+        if (!bookList.isEmpty()) {
+            System.out.println("Total number of books: " + bookList.size());
         } else {
             System.out.println("Please add books before using this function");
         }
@@ -58,7 +58,7 @@ public void getBook(int index) {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Book book = new Book();
+        Practice bookList = new Practice();
         int choice;
         boolean exit = false;
 
@@ -75,45 +75,45 @@ public void getBook(int index) {
             scanner.nextLine();
 
             switch (choice) {
-            case 1:
-                System.out.println("Enter Book Name: ");
-                String bookName = scanner.nextLine();
-                book.addBook(bookName);
-                break;
-            case 2:
-                if (!book.empty) {
+                case 1:
                     System.out.println("Enter Book Name: ");
-                    String bookName2 = scanner.nextLine();
-                    System.out.println("Enter Index: ");
-                    int index2 = scanner.nextInt();
-                    scanner.nextLine();
-                    book.insert(index2, bookName2);
-                } else {
-                    System.out.println("Please add books before using this function");
-                }
-                break;
-            case 3:
-                if (!book.empty) {
-                    System.out.println("Enter index of book to remove: ");
-                    int index3 = scanner.nextInt();
-                    scanner.nextLine();
-                    book.removeBook(index3);
-                } else {
-                    System.out.println("Please add books before using this function");
+                    String bookName = scanner.nextLine();
+                    bookList.addBook(bookName);
+                    break;
+                case 2:
+                    if (!bookList.isEmpty) {
+                        System.out.println("Enter Book Name: ");
+                        String bookName2 = scanner.nextLine();
+                        System.out.println("Enter Index: ");
+                        int index2 = scanner.nextInt();
+                        scanner.nextLine();
+                        bookList.insertBook(bookName2, index2);
+                    } else {
+                        System.out.println("Please add books before using this function");
+                    }
+                    break;
+                case 3:
+                    if (!bookList.isEmpty) {
+                        System.out.println("Enter index of book to remove: ");
+                        int index3 = scanner.nextInt();
+                        scanner.nextLine();
+                        bookList.removeBook(index3);
+                    } else {
+                        System.out.println("Please add books before using this function");
                     }
                     break;
                 case 4:
-                    if (!book.empty) {
+                    if (!bookList.isEmpty) {
                         System.out.println("Enter index of book to get: ");
                         int index4 = scanner.nextInt();
                         scanner.nextLine();
-                        book.getBook(index4);
+                        bookList.getBook(index4);
                     } else {
                         System.out.println("Please add books before using this function");
                     }
                     break;
                 case 5:
-                    book.totalBooks();
+                    bookList.totalBooks();
                     break;
                 case 6:
                     exit = true;
