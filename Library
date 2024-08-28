@@ -39,15 +39,14 @@ public void removeBook(int index) {
 			empty = true;
 			}
 
-public void getBook(int index) {
-    if (index < 0 || index >= books.size()) {
-        System.out.println("Error: Index " + index + " is out of bounds.");
-        return;
+ public void getBook(int index) {
+        if (index >= 0 && index < book.size()) {
+            String bookTitle = book.get(index);
+            System.out.println("Book at index " + index + ": \"" + bookTitle + "\"");
+        } else {
+            System.out.println("Error: Index out of bounds");
+        }
     }
-    String book = books.get(index);
-    System.out.println("Book at index " + index + ": \"" + book + "\"");
-}
-
 
     public void totalBooks() {
         if (!bookList.isEmpty()) {
