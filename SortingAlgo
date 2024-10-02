@@ -1,1 +1,62 @@
+package Sort;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Arraylist1 {
+	public static void main(String[] args) {
+	        ArrayList<Integer> arr = new ArrayList<>();
+	        Scanner scanner = new Scanner(System.in);
+	        arr.add(2);
+	        arr.add(10);
+	        arr.add(15);
+	        arr.add(4);
+	        arr.add(1);
+	        arr.add(18);
+	        arr.add(16);
+	        arr.add(5);
+	        
+	        System.out.println("Current Arraylist: " + arr);
+	        
+	        while (true) {
+	            System.out.println("1. Add element to array");
+	            System.out.println("2. Sort array");
+	            System.out.println("3. Exit");
+	            System.out.print("Choose an option: ");
+	            int option = scanner.nextInt();
+
+	            switch (option) {
+	                case 1:
+	                    System.out.print("Enter an element to add: ");
+	                    int element = scanner.nextInt();
+	                    arr.add(element);
+	                    System.out.println("Arraylist: " + arr);
+	                    break;
+	                case 2:
+	                    insertionSort(arr);
+	                    System.out.println("Sorted array: " + arr);
+	                    break;
+	                case 3:
+	                    System.out.println("Exiting...");
+	                    return;
+	                default:
+	                    System.out.println("Invalid option. Please try again.");
+	            }
+	        }
+	    }
+
+	    public static void insertionSort(ArrayList<Integer> arr) {
+	        int n = arr.size();
+	        for (int i = 1; i < n; i++) {
+	            int key = arr.get(i);
+	            int j = i - 1;
+	            while (j >= 0 && arr.get(j) > key) {
+	                arr.set(j + 1, arr.get(j));
+	                j--;
+	            }
+	            arr.set(j + 1, key);
+	            System.out.println("After pass " + i + ": " + arr);
+	        }
+	    }
+	}
+	
