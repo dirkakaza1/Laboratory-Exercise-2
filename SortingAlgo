@@ -59,4 +59,56 @@ public class Arraylist1 {
 	        }
 	    }
 	}
+
+
+package sortAlgorithmPart2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Exercise {
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    Library book = new Library();
+    int choice;
+    boolean exit = false;
+
+    while (!exit) {
+        System.out.println("Menu");
+        System.out.println("1. Array");
+        System.out.println("2. Arraylist");
+        System.out.println("3. Stack");
+        
+
+        choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+        case 1:
+            System.out.println("Enter Array: ");
+            String Array = scanner.nextLine();
+            book.addArray(Array);
+            break;
+        case 2:
+            if (!book.book.isEmpty()) {
+                System.out.println("Enter ArrayList: ");
+                String ArrayList = scanner.nextLine();
+                System.out.println("Enter Index: ");
+                int index2 = scanner.nextInt();
+                scanner.nextLine();
+                book.insert(ArrayList, ArrayList);
+            } else {
+                System.out.println("Please add Array before using this function");
+            }
+            break;
+        case 3:
+            if (!book.book.isEmpty()) {
+                System.out.println("Enter Stack: ");
+                int index3 = scanner.nextInt();
+                scanner.nextLine();
+                book.removeStack(Stack);
+            } else {
+                System.out.println("Please add Stack before using this function");
+                }
+            break;
+        }
 	
