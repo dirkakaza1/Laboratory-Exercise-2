@@ -65,11 +65,31 @@ package sortAlgorithmPart2;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Exercise {
+
+public static void sortStack(Stack<Integer> firstStack) {
+        Stack<Integer> newStack = new Stack<>();
+        while (!firstStack.isEmpty()) {
+            int temp = firstStack.pop();
+            while (!newStack.isEmpty() && newStack.peek() < temp) {
+            	firstStack.push(newStack.pop());
+            }
+            newStack.push(temp);
+        }
+        while (!newStack.isEmpty()) {
+        	firstStack.push(newStack.pop());
+      	  for (Integer element : firstStack) {
+              System.out.print(element + " ");
+          }
+          System.out.println();
+        }
+    }
+
 public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     Library book = new Library();
     int choice;
     boolean exit = false;
+    boolean stop = false;
 
     while (!exit) {
         System.out.println("Menu");
@@ -100,13 +120,29 @@ public static void main(String[] args) {
             }
             break;
         case 3:
-            if (!book.book.isEmpty()) {
-                System.out.println("Enter Stack: ");
-                int index3 = scanner.nextInt();
-                scanner.nextLine();
-                book.removeStack(Stack);
-            } else {
-                System.out.println("Please add Stack before using this function");
-                }
+          
+        while(!stop) {
+        System.out.println("Enter Value Here: ");
+        stack.push(scanner.nextInt());
+        System.out.println("Stop? true if yes false if no");
+        stop = scan.nextBoolean();
+        for (Integer element : stack) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+        }
+        System.out.print("Original Stack: ");
+        for (Integer element : stack) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+
+        sortStack(stack);
+        
+        System.out.print("Sorted Stack: ");
+        for (Integer element : stack) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
             break;
         }
